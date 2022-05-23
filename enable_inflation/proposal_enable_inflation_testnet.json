@@ -1,0 +1,11 @@
+{
+  "title": "Parameter change: Enable the inflation module",
+  "description": "If successful, this proposal will enable the inflation module on the Evmos Testnet. Enabling this module activates the token allocation to staking rewards, usage incentives and community pool. For an in-depth explanation of the module, please refer to the specification: https://docs.evmos.org/modules/inflation/",
+  "changes": [
+    {
+      "subspace": "inflation",
+      "key":"ParamStoreKeyEnableInflation",
+      "value": true
+    }
+  ]
+}
