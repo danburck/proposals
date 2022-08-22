@@ -1,0 +1,11 @@
+{
+  "title": "Parameter change: change Min Gas Price",
+  "description": "If successful, this proposal will change the min gas price parameter in the feemarket module to `1_000_000atevmos` on the Evmos Testnet. This change is proposed to role back the recent min gas price increase that was implemented with v5.0.0 upgrade. The Evmos team noticed that the current implementation of the min gas fee can cause trouble signing transactions with Metamask.",
+  "changes": [
+    {
+      "subspace": "feemarket",
+      "key":"MinGasPrice",
+      "value": "10000000000000"
+    }
+  ]
+}
