@@ -1,5 +1,7 @@
 # Creating a Proposal
 
+This guide provides an example on how to create software upgrade proposals on Evmos. To avoid mistakes I recommend double checking every flag and creating the proposal locally first. Note, that if you submit the proposal over CLI, first confirm if the proposal [has been submitted or failed](https://app.evmos.org/governance) before trying again.
+
 ## Local
 
 ```bash
@@ -40,7 +42,7 @@ evmosd tx gov submit-proposal software-upgrade "v8.0.0" \
 --node=https://tendermint.bd.evmos.dev:26657
 
 
-# place deposit
+# place deposit yourself or let other validators place it
 evmosd tx gov deposit <PROPOSALID> 1000000000000000000atevmos \
 --from=hot2 \
 --fees=80atevmos --gas=auto -b block --chain-id=evmos_9000-4 \
@@ -62,9 +64,6 @@ evmosd tx gov submit-proposal software-upgrade "v8.0.0" \
 --fees=26000000000000000aevmos --gas=700000 -b block --chain-id=evmos_9001-2 \
 --node=https://tendermint.bd.evmos.org:26657
 ```
-
-0.02503153
-26000000000000000
 
 # Description Template
 
@@ -100,6 +99,8 @@ The Evmos core team created an End-to-End testing suite that performs the softwa
 Before voting, please follow and discuss this proposal using the official [discussion on commonwealth](https://commonwealth.im/evmos/discussion/6653-evmos-software-upgrade-v800).
 ```
 
+
+# Binaries example
 
 ```json
 {
