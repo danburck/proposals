@@ -1,0 +1,11 @@
+{
+  "title": "Test Proposal - PLEASE REJECT",
+  "description": "Test Proposal - PLEASE REJECT",
+  "changes": [
+    {
+      "subspace": "feemarket",
+      "key":"MinGasPrice",
+      "value": "10000000000000"
+    }
+  ]
+}
