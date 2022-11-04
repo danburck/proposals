@@ -1,4 +1,6 @@
-# `v10`
+# `v9.1.0` -> `v10`
+
+Note that signing gov proposals with `--keyring-backend=os` might not be supported.
 
 ## Local
 
@@ -35,8 +37,9 @@ evmosd tx gov submit-proposal software-upgrade "v10.0.0-rc1" \
 --upgrade-height 8700000 \
 --upgrade-info '{"binaries":{"darwin/arm64":"https://github.com/evmos/evmos/releases/download/v10.0.0-rc1/evmos_10.0.0-rc1_Darwin_arm64.tar.gz","darwin/amd64":"https://github.com/evmos/evmos/releases/download/v10.0.0-rc1/evmos_10.0.0-rc1_Darwin_amd64.tar.gz","linux/arm64":"https://github.com/evmos/evmos/releases/download/v10.0.0-rc1/evmos_10.0.0-rc1_Linux_arm64.tar.gz","linux/amd64":"https://github.com/evmos/evmos/releases/download/v10.0.0-rc1/evmos_10.0.0-rc1_Linux_amd64.tar.gz","windows/x86_64":"https://github.com/evmos/evmos/releases/download/v10.0.0-rc1/evmos_10.0.0-rc1_Windows_x86_64.zip"}}' \
 --description "## Author\n\nDaniel Burckhardt ([@danburck](https://twitter.com/danburck)), Evmos Core Team\n\n## Software Upgrade being scheduled with this proposal\n\nIf successful, this proposal will schedule an Evmos software upgrade at block height [8,700,000](https://testnet.mintscan.io/evmos-testnet/blocks/8700000) from it's current version [v9.1.0](https://github.com/tharsis/evmos/releases/tag/v9.1.0) to [v10.0.0-rc1](https://github.com/tharsis/evmos/releases/tag/v10.0.0-rc1).\n\n## Motivation\n\nBy proposing a scheduled upgrade, we want to implement a smooth and transparent upgrade process, that is first proposed on Testnet using release candidates (rc) and then on Mainnet. Software upgrades generally aim to improve performance and add new features to the Evmos chain. For more information on the types of upgrades, please visit our [Software Upgrade Guide](https://docs.evmos.org/validators/upgrades/overview.html).\n\n## Impact\n\nOn a high level, the v10.0.0-rc1 software includes the following improvements:\n\nThis is a dedicated release candidate for the Cosmos SDK v0.46 series. It also contains minor improvements and bug fixes:\n\n* ERC20 proposals to register ERC20 tokens and Cosmos coins now can receive multiple denominations\n* Prioritized mempool support for Cosmos and Ethereum txs\n* EIP-1559 now also supports native Cosmos transactions\n* EIP-712 fixes for all major Cosmos messages (eg: MsgGrant for restake support)\n* Ethereum Tx indexer\n\nA full changelog can be found [here](https://github.com/tharsis/evmos/releases/tag/v10.0.0-rc1).\n\n## Testing\n\nPrior to this proposal the version v10.0.0-rc1 with an an End-to-End testing suite that performs the software upgrade locally. These tests have been completed successfully for this upgrade. The instructions on how to run the End-to-End testing suite can be found [here](https://github.com/evmos/evmos/pull/1028)." \
---from=a1 \
---fees=7000000000000atevmos --gas=700000 -b block --chain-id=evmos_9000-4 \
+--from=a1 --keyring-backend=test \
+--fees=17500000000000000atevmos --gas=700000 -b block \
+--chain-id=evmos_9000-4 \
 --node=https://tendermint.bd.evmos.dev:26657
 
 
